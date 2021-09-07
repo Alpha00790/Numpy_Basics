@@ -1,0 +1,61 @@
+import numpy as np
+data = np.loadtxt('population.txt')
+print(data)
+print("++++++++++++++++++++++++++++++++")
+year, hare, lynx, carrot = data.T
+
+# print(data.T)
+# print("Years: ", data.T[0])
+print(year)
+print("Taking Overall population:")
+population = data[:, 1:]
+print(population)
+
+print(population.std(axis=0))
+
+print(population.argmax(axis=1))
+print(np.argmax(population, axis=1))
+a = np.tile(np.arange(0, 40, 10), (3, 2))
+print(a)
+a = a.T
+print(a)
+print("+++++++++++++++++++++++++++++========================\n")
+a = np.tile(np.arange(0, 40, 10), (3, 1))
+print(a)
+a = a.T
+print(a)
+b = np.tile(np.arange(0, 3), (4, 1))
+print(b)
+print(a+b)
+print("+++++++++++++++++++++++++++++========================\n")
+
+c = np.arange(0, 3)
+print(a+c)
+x = a+b
+y = a+c
+print(x == y)
+print(np.all(x == y))
+print(a.shape)
+a = np.array([[1, 2, 3], [4, 5, 6]])
+print(a)
+c = a.ravel()
+print(c)
+c = a.reshape(3, 2)
+print(c)
+c = c.reshape(2, 3)
+print(c)
+a = a.ravel()
+print(a)
+a = a.reshape(3, 2)
+print(a)
+a = np.array([[5, 4, 6], [2, 3, 2]])
+print(a)
+a.sort(axis=1)
+print(a)
+a = np.array([[9, 4, 6], [8, 9, 2]])
+b = np.sort(a, axis=1)
+print(b)
+a = np.array([4, 3, 1, 2])
+j = np.argsort(a)
+print(j)
+print(a[j])
